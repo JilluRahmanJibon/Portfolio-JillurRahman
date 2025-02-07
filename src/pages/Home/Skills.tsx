@@ -51,7 +51,7 @@ const Skills = () => {
 	const selectedSkills = skills[selectedSkill];
 
 	return (
-		<div id="skill" className="py-20 px-6 bg-gray-800 text-white">
+		<div id="skills" className="py-24 px-6 bg-gray-800 text-white">
 			<div className="container mx-auto text-center">
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}

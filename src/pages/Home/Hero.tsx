@@ -7,6 +7,7 @@ import {
 	FaWhatsapp,
 } from "react-icons/fa";
 import { Link } from "react-scroll";
+import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
 const Hero = () => {
 	return (
@@ -37,7 +38,7 @@ const Hero = () => {
 				</motion.div>
 				<div className="mt-6 flex md:justify-start justify-center sm:space-x-6 space-x-3">
 					<motion.a
-						href="/path-to-your-resume.pdf"
+						href={jibonResume}
 						download
 						className="px-6 py-2 bg-yellow-500 text-white rounded-md shadow-md hover:bg-yellow-500 transition"
 						data-aos="fade-up"

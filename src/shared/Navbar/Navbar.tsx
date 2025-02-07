@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 import logo from "../../assets/logo/logo.png";
-
+import jibonResume from '../../assets/Jillu Rahman Jibon.pdf'
 const Navbar = () => {
 	const [scrolling, setScrolling] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -21,8 +21,8 @@ const Navbar = () => {
 
 	const handleResumeDownload = () => {
 		const link = document.createElement("a");
-		link.href = "/path-to-your-resume.pdf";
-		link.download = "Md_Jillu_Rahman_Resume.pdf";
+		link.href = jibonResume;
+		link.download = "Md Jillur Rahman.pdf";
 		link.click();
 	};
 

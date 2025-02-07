@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import picture from "../../assets/images/jibon.jpg";
 import { Link } from "react-scroll";
+import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
 const About = () => {
 	return (
@@ -10,7 +11,7 @@ const About = () => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8 }}
 				className="text-3xl text-center text-white font-semibold mb-8">
-				My Skills
+				About Me
 			</motion.h2>
 
 			<div className="mx-auto flex flex-col-reverse md:flex-row items-center space-y-8 md:space-y-0">
@@ -47,7 +48,7 @@ const About = () => {
 
 						<div className="mt-8 flex justify-center md:justify-start space-x-4">
 							<motion.a
-								href="/path-to-your-resume.pdf"
+								href={jibonResume}
 								download
 								data-aos="fade-up"
 								data-aos-delay="400"

@@ -66,7 +66,7 @@ const Portfolio = () => {
 	);
 
 	return (
-		<div id="portfolio" className="portfolio-container py-10   text-white">
+		<div id="portfolio" className="portfolio-container py-24   text-white">
 			<h2 className="text-4xl font-bold text-center mb-8">Portfolio</h2>
 
 			{/* Category Buttons */}
