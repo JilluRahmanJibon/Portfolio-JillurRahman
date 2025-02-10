@@ -1,24 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+	const form = useRef<HTMLFormElement | null>(null);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
 		message: "",
 	});
+	const [done, setDone] = useState(false);
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
-
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log("Form Submitted:", formData);
-		// You can integrate API here for email sending
-		alert("Message sent successfully!");
+
+		if (!form.current) {
+			console.error("Form reference is not available.");
+			return;
+		}
+
+		emailjs
+			.sendForm(
+				"service_fw1aj2r",
+				"template_h866lwi",
+				form.current,
+				"w1lyvILBFbG3awpdD"
+			)
+			.then(
+				result => {
+					console.log(result.text);
+					setDone(true);
+					form.current?.reset();
+					// Reset form state
+					setFormData({
+						name: "",
+						email: "",
+						message: "",
+					});
+				},
+				error => {
+					console.log(error.text);
+				}
+			);
 	};
 
 	return (
@@ -62,6 +90,7 @@ const Contact = () => {
 
 				{/* Right Side - Contact Form */}
 				<motion.form
+					ref={form}
 					initial={{ opacity: 0, x: 50 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.5 }}
@@ -113,11 +142,22 @@ const Contact = () => {
 					</div>
 
 					{/* Submit Button */}
-					<button
-						type="submit"
-						className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 rounded-md transition-all">
-						Send Message
-					</button>
+
+					{done ? (
+						<>
+							<p className="text-teal-600 text-center w-full bg-gray-200    font-bold py-3 rounded-md transition-all mt-4">
+								Thanks for contacting us!
+							</p>
+						</>
+					) : (
+						<>
+							<button
+								type="submit"
+								className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 rounded-md transition-all">
+								Send Message
+							</button>
+						</>
+					)}
 				</motion.form>
 			</div>
 		</section>

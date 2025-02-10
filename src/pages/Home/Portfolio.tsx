@@ -1,60 +1,41 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import arltl from "../../../src/assets/images/arltl.png";
+import idiaDesigns from "../../../src/assets/images/idia-designs.png";
+import snapAcademy from "../../../src/assets/images/snap-academy.png";
 
 type PortfolioItem = {
-	type: string;
 	name: string;
 	image: string;
 	description: string;
 	demo: string;
 	source: string;
-	tools: string[];
 };
 
 const portfolios: Record<string, PortfolioItem[]> = {
 	Web: [
 		{
-			type: "regular",
-			name: "Phonebook",
-			image: "http://localhost:5173/src/assets/images/jibon.jpg",
+			name: "AR Labels and Trims LTD.",
+			image: arltl,
 			description:
 				"A CRUD Application to store your contact phone numbers, everything at one place",
-			demo: "https://phonebookpca.netlify.com/",
-			source: "https://github.com/zonayedpca/nodeMySQLPhonebook",
-			tools: ["Express", "MySQL", "React"],
+			demo: "https://arltl.com",
+			source: "https://arltl.com",
 		},
 		{
-			type: "regular",
-			name: "Holy Quran",
-			image:
-				"https://www.shutterstock.com/shutterstock/photos/2145394919/display_1500/stock-photo-holy-al-quran-with-written-arabic-calligraphy-meaning-of-al-quran-and-rosary-beads-or-tasbih-on-2145394919.jpg",
-			description:
-				"Read the Holy Quran with English Translation. Simple, basic, and clean",
-			demo: "https://zonayedpca.github.io/HolyQuranReact/",
-			source: "https://github.com/zonayedpca/HolyQuranReact",
-			tools: ["React", "Redux"],
-		},
-	],
-	Others: [
-		{
-			type: "regular",
-			name: "React Native Welcome",
-			image: "/images/react-native.jpg",
-			description:
-				"A helper package for React Native to welcome user with beautiful and interactive UI",
-			demo: "https://www.npmjs.com/package/react-native-welcome",
-			source: "https://github.com/zonayedpca/react-native-welcome",
-			tools: ["NPM Package", "React Native"],
+			name: "IdiaDesigns",
+			image: idiaDesigns,
+			description: "IdiaDesigns is motion studio website",
+			demo: "https://idia-client.vercel.app",
+			source: "https://idia-client.vercel.app",
 		},
 		{
-			type: "regular",
-			name: "React Web Workers",
-			image: "/images/web-workers.jpg",
-			description: "A Small helper package for React to work with web workers",
-			demo: "https://www.npmjs.com/package/react-web-workers",
-			source: "https://github.com/zonayedpca/react-web-workers",
-			tools: ["NPM Package", "React"],
+			name: "Snap Academy",
+			image: snapAcademy,
+			description: "Snap Academy is a Photography website",
+			demo: "https://snap-academy-1.web.app",
+			source: "https://github.com/JilluRahmanJibon/Snap-Academy",
 		},
 	],
 };

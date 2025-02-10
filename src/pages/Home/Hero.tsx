@@ -31,9 +31,9 @@ const Hero = () => {
 					data-aos-delay="200">
 					<p className="text-yellow-500 font-bold">Full Stack Developer</p>
 					<ul className=" sm:flex gap-9 sm:list-disc text-white marker:text-yellow-500">
-						<li className="list-none">Web Developer</li>
-						<li>Programmer</li>
-						<li>Software Engineer</li>
+						<li className="list-none">Programmer</li>
+						<li>Web Developer</li>
+						<li>Web Designer</li>
 					</ul>
 				</motion.div>
 				<div className="mt-6 flex md:justify-start justify-center sm:space-x-6 space-x-3">
@@ -67,7 +67,7 @@ const Hero = () => {
 					<motion.a
 						data-aos="fade-up"
 						data-aos-delay="500"
-						href="https://github.com"
+						href="https://github.com/JilluRahmanJibon"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-yellow-500 transition">
@@ -76,7 +76,7 @@ const Hero = () => {
 					<motion.a
 						data-aos="fade-up"
 						data-aos-delay="600"
-						href="https://wa.me/yourwhatsappnumber" // Replace with your WhatsApp link
+						href="https://wa.me/01910924868" // Replace with your WhatsApp link
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-yellow-500 transition">
@@ -85,7 +85,7 @@ const Hero = () => {
 					<motion.a
 						data-aos="fade-up"
 						data-aos-delay="700"
-						href="https://linkedin.com"
+						href="https://www.linkedin.com/in/jillurahmanjibon"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-yellow-500 transition">
@@ -94,7 +94,7 @@ const Hero = () => {
 					<motion.a
 						data-aos="fade-up"
 						data-aos-delay="800"
-						href="https://facebook.com"
+						href="https://web.facebook.com/developer.JillurRahmanJibon"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-yellow-500 transition">
