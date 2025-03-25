@@ -94,7 +94,7 @@ const Hero = () => {
 					<motion.a
 						data-aos="fade-up"
 						data-aos-delay="800"
-						href="https://web.facebook.com/developer.JillurRahmanJibon"
+						href="https://web.facebook.com/dev.JillurRahman"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-yellow-500 transition">

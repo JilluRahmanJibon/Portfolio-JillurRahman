@@ -3,6 +3,8 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import arltl from "../../../src/assets/images/arltl.png";
 import idiaDesigns from "../../../src/assets/images/idia-designs.png";
+import gamingPortfolio from "../../../src/assets/images/gaming-portfolio.png";
+import weg from "../../../src/assets/images/weg.png";
 import snapAcademy from "../../../src/assets/images/snap-academy.png";
 
 type PortfolioItem = {
@@ -22,6 +24,20 @@ const portfolios: Record<string, PortfolioItem[]> = {
 				"A CRUD Application to store your contact phone numbers, everything at one place",
 			demo: "https://arltl.com",
 			source: "https://arltl.com",
+		},
+		{
+			name: "Gaming Portfolio",
+			image: gamingPortfolio,
+			description: "Gaming Portfolio is a personal business website",
+			demo: "https://gaming-portfolio-alpha.vercel.app",
+			source: "https://github.com/JilluRahmanJibon/Gaming-Portfolio-Clone",
+		},
+		{
+			name: "Western Education Group",
+			image: weg,
+			description: "Western Education Group is a business website",
+			demo: "https://weg-five.vercel.app/",
+			source: "https://github.com/JilluRahmanJibon/WEG-Clone",
 		},
 		{
 			name: "IdiaDesigns",

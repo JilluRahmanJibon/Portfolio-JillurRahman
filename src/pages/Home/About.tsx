@@ -79,7 +79,7 @@ const About = () => {
 					<img
 						src={picture}
 						alt="Md Jillur Rahman"
-						className="w-[320px] rounded-lg transform scale-95 grayscale transition-all duration-1000 group-hover:scale-100 group-hover:grayscale-0"
+						className="w-[520px] rounded-lg transform scale-95 grayscale transition-all duration-1000 group-hover:scale-100 group-hover:grayscale-0"
 					/>
 				</motion.div>
 			</div>
