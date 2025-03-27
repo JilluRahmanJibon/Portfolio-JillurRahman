@@ -6,107 +6,134 @@ import {
 	FaEnvelope,
 	FaWhatsapp,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-scroll";
 import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
 const Hero = () => {
+	const socialIcons = [
+		{
+			href: "https://github.com/JilluRahmanJibon",
+			icon: <FaGithub />,
+			delay: 500,
+		},
+		{ href: "https://wa.me/+8801910924868", icon: <FaWhatsapp />, delay: 600 },
+		{
+			href: "https://www.linkedin.com/in/jillurahmanjibon",
+			icon: <FaLinkedin />,
+			delay: 700,
+		},
+		{ href: "https://x.com/JR_JillurRahman", icon: <FaXTwitter />, delay: 800 },
+		{
+			href: "https://web.facebook.com/dev.JillurRahman",
+			icon: <FaFacebook />,
+			delay: 900,
+		},
+		{
+			href: "mailto:jillurahmanjibon@gmail.com",
+			icon: <FaEnvelope />,
+			delay: 1000,
+		},
+	];
+
 	return (
-		<section className="h-screen py-[200px] flex sm:justify-between items-center sm:flex-row flex-col    text-white px-6">
-			<div className="sm:text-start text-center">
-				<motion.h1
-					className="text-xl md:text-2xl font-bold text-yellow-500"
-					initial={{ opacity: 0, y: -20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}>
-					Hello! I am
-				</motion.h1>
-				<motion.h2
-					className="text-2xl md:text-6xl font-bold mt-3 "
-					data-aos="fade-up">
-					Md Jillur Rahman
-				</motion.h2>
+		<section className=" h-screen py-[200px] relative  text-white px-4 sm:px-6 lg:px-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700  overflow-hidden ">
+			<div className="max-w-7xl mx-auto flex sm:justify-between items-center sm:flex-row flex-col">
+				{/* Animated Background Element */}
 				<motion.div
-					className="mt-4 text-lg md:text-2xl font-medium"
-					data-aos="fade-up"
-					data-aos-delay="200">
-					<p className="text-yellow-500 font-bold">Full Stack Developer</p>
-					<ul className=" sm:flex gap-9 sm:list-disc text-white marker:text-yellow-500">
-						<li className="list-none">Programmer</li>
-						<li>Web Developer</li>
-						<li>Web Designer</li>
-					</ul>
-				</motion.div>
-				<div className="mt-6 flex md:justify-start justify-center sm:space-x-6 space-x-3">
-					<motion.a
-						href={jibonResume}
-						download
-						className="px-6 py-2 bg-yellow-500 text-white rounded-md shadow-md hover:bg-yellow-500 transition"
-						data-aos="fade-up"
-						data-aos-delay="400">
-						Get Resume
-					</motion.a>
-					<Link
-						to="about"
-						smooth={true}
-						duration={500}
-						data-aos="fade-up"
-						data-aos-delay="600"
-						className="px-6 py-2 border-2 border-yellow-500 cursor-pointer text-white rounded-md hover:bg-yellow-500  transition">
-						<motion.p>About Me</motion.p>
-					</Link>
+					className="absolute inset-0 w-full h-full bg-yellow-500 opacity-10 rounded-full blur-3xl"
+					initial={{ scale: 0, x: "-50%", y: "-50%" }}
+					animate={{ scale: 1.5, rotate: 360 }}
+					transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+					style={{ top: "50%", left: "50%" }}
+				/>
+
+				<div className="w-full sm:w-1/2 sm:text-left text-center z-10">
+					<motion.h1
+						className="text-xl md:text-2xl font-extrabold text-yellow-400 drop-shadow-md"
+						initial={{ opacity: 0, y: -50 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}>
+						Hello! I am
+					</motion.h1>
+					<motion.h2
+						className="text-4xl md:text-7xl font-extrabold mt-3 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
+						initial={{ opacity: 0, scale: 0.8 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 1, delay: 0.2 }}>
+						Md Jillur Rahman
+					</motion.h2>
+					<motion.div
+						className="mt-4 text-lg md:text-2xl font-medium"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, delay: 0.4 }}>
+						<p className="text-yellow-400 font-bold tracking-wide">
+							Full Stack Developer
+						</p>
+						<ul className="sm:flex gap-6 sm:list-disc text-white marker:text-yellow-400 mt-2">
+							<li className="list-none">Programmer</li>
+							<li>Web Developer</li>
+							<li>Web Designer</li>
+						</ul>
+					</motion.div>
+					<div className="mt-8 flex md:justify-start justify-center sm:space-x-6 space-x-3">
+						<motion.a
+							href={jibonResume}
+							download
+							className="px-8 py-3 bg-yellow-500 text-white rounded-full shadow-lg hover:bg-yellow-600 hover:shadow-xl transition-all font-semibold animate-pulse"
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							initial={{ opacity: 0, x: -20 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.6, delay: 0.6 }}>
+							Get Resume
+						</motion.a>
+						<motion.span
+							initial={{ opacity: 0, x: 20 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.6, delay: 0.7 }}
+							whileHover={{
+								scale: 1.05,
+								boxShadow: "0 0 15px rgba(234, 179, 8, 0.7)",
+							}}
+							whileTap={{ scale: 0.95 }}
+							className="px-8 py-3 border-2 border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-white hover:shadow-xl transition-all font-semibold">
+							<Link to="about" smooth={true} duration={500}>
+								<motion.p whileHover={{ scale: 1.1 }}>About Me</motion.p>
+							</Link>
+						</motion.span>
+					</div>
 				</div>
-			</div>
-			<div className=" text-3xl relative sm:mt-0 mt-8">
-				<motion.p
-					data-aos="fade-up"
-					data-aos-delay="400"
-					className="text-lg  font-semibold text-center sm:pb-0 pb-3 text-yellow-500 transform sm:rotate-90 sm:absolute sm:right-[-50px] sm:top-1/2">
-					Follow Me
-				</motion.p>
-				<div className="flex sm:flex-col  sm:space-y-6 space-x-3">
-					<motion.a
-						data-aos="fade-up"
-						data-aos-delay="500"
-						href="https://github.com/JilluRahmanJibon"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hover:text-yellow-500 transition">
-						<FaGithub />
-					</motion.a>
-					<motion.a
-						data-aos="fade-up"
-						data-aos-delay="600"
-						href="https://wa.me/01910924868" // Replace with your WhatsApp link
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hover:text-yellow-500 transition">
-						<FaWhatsapp />
-					</motion.a>
-					<motion.a
-						data-aos="fade-up"
-						data-aos-delay="700"
-						href="https://www.linkedin.com/in/jillurahmanjibon"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hover:text-yellow-500 transition">
-						<FaLinkedin />
-					</motion.a>
-					<motion.a
-						data-aos="fade-up"
-						data-aos-delay="800"
-						href="https://web.facebook.com/dev.JillurRahman"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hover:text-yellow-500 transition">
-						<FaFacebook />
-					</motion.a>
-					<motion.a
-						data-aos="fade-up"
-						data-aos-delay="900"
-						href="mailto:jillurahmanjibon@gmail.com"
-						className="hover:text-yellow-500 transition">
-						<FaEnvelope />
-					</motion.a>
+
+				<div className="w-full sm:w-auto text-2xl sm:text-3xl relative sm:mt-0 mt-8  flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:items-start">
+					<motion.p
+						className="text-base whitespace-nowrap  sm:text-lg font-semibold text-yellow-400 transform sm:rotate-90 sm:absolute sm:right-[-50px] sm:top-1/2 text-center pb-4 sm:pb-5 tracking-wide order-1 sm:order-2"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, delay: 0.4 }}>
+						Follow Me
+					</motion.p>
+					<div className="flex z-50 flex-row sm:flex-col justify-center space-x-3 sm:space-x-0 sm:space-y-6 order-2 sm:order-1">
+						{socialIcons.map((item, index) => (
+							<motion.a
+								key={index}
+								href={item.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="hover:text-yellow-400 hover:shadow-lg transition-all"
+								initial={{ opacity: 0, scale: 0 }}
+								animate={{ opacity: 1, scale: 1 }}
+								transition={{
+									duration: 0.5,
+									delay: item.delay / 1000,
+									type: "spring",
+								}}
+								whileHover={{ scale: 1.2, rotate: 10 }}>
+								{item.icon}
+							</motion.a>
+						))}
+					</div>
 				</div>
 			</div>
 		</section>

@@ -8,7 +8,7 @@ const App = () => {
 	AOS.init({ duration: 800 ,once:true});
 
 	return (
-		<div className="max-w-7xl mx-auto">
+		<div className="">
 			<Navbar />
 			<Home />
 			<Footer/>

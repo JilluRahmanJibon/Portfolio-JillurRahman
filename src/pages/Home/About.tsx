@@ -5,83 +5,126 @@ import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
 const About = () => {
 	return (
-		<section className="py-28 px-6 " id="about">
-			<motion.h2
-				initial={{ opacity: 0, y: -20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
-				className="text-3xl text-center text-white font-semibold mb-8">
-				About Me
-			</motion.h2>
+		<section
+			className="py-16 sm:py-28 px-4 sm:px-6  relative overflow-hidden"
+			id="about">
+			{/* Animated Background Glow */}
+			<motion.div
+				className="absolute inset-0 bg-yellow-500 opacity-5 rounded-full blur-3xl"
+				initial={{ scale: 0, x: "-50%", y: "-50%" }}
+				animate={{ scale: 1.5, rotate: 360 }}
+				transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+				style={{ width: "150%", height: "150%", top: "50%", left: "50%" }}
+			/>
 
-			<div className="mx-auto flex flex-col-reverse md:flex-row items-center space-y-8 md:space-y-0">
-				{/* Left side: Info with rotation effect */}
-				<motion.div
-					className="text-center text-md text-gray-200 md:text-left w-full lg:w-1/2"
-					initial={{ opacity: 0, rotate: -15 }}
-					animate={{ opacity: 1, rotate: 0 }}
-					transition={{ duration: 1 }}>
-					<div>
-						<motion.p className="mt-6" data-aos="fade-up" data-aos-delay="100">
-							Hello! I'm Jillur Rahman, a passionate Jr. Full Stack Developer. I
-							specialize in developing web applications using modern
-							technologies like JavaScript, TypeScript, Redux, and Next.js. With
-							strong frontend skills in HTML5, CSS3, and JavaScript, I’m
-							well-versed in popular libraries and frameworks like React.js,
-							Bootstrap, and Tailwind CSS.
+			<div className="max-w-7xl mx-auto relative z-10">
+				<motion.h2
+					initial={{ opacity: 0, y: -50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+					viewport={{ once: true }}
+					className="text-3xl sm:text-5xl text-center text-white font-bold mb-8 sm:mb-12 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg animate-pulse-slow">
+					About Me
+				</motion.h2>
+
+				<div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
+					{/* Left side: Info */}
+					<motion.div
+						className="w-full md:w-1/2 text-center md:text-left text-gray-200 text-base sm:text-lg"
+						initial={{ opacity: 0, x: -50 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 1, type: "spring" }}
+						viewport={{ once: true }}>
+						<motion.p
+							className="mt-4 sm:mt-6 leading-relaxed"
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.1 }}
+							viewport={{ once: true }}>
+							Hello! I'm{" "}
+							<span className="text-yellow-400 font-bold">Jillur Rahman</span>,
+							a passionate Jr. Full Stack Developer. I specialize in crafting
+							web applications with modern tools like{" "}
+							<span className="text-yellow-400">
+								JavaScript, TypeScript, Redux, and Next.js
+							</span>
+							. My frontend skills shine with HTML5, CSS3, React.js, Bootstrap,
+							and Tailwind CSS.
 						</motion.p>
 
-						<motion.p className="mt-6" data-aos="fade-up" data-aos-delay="200">
-							I have hands-on experience with backend development, utilizing
-							tools like Express.js, MySQL, and MongoDB, along with RESTful API
-							development. I enjoy learning new technologies and solving complex
-							problems to build scalable and efficient web applications.
+						<motion.p
+							className="mt-4 sm:mt-6 leading-relaxed"
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.2 }}
+							viewport={{ once: true }}>
+							On the backend, I wield{" "}
+							<span className="text-yellow-400">
+								Express.js, MySQL, and MongoDB
+							</span>{" "}
+							to build robust RESTful APIs. I thrive on solving complex problems
+							and learning cutting-edge tech to create scalable, efficient
+							solutions.
 						</motion.p>
 
-						<motion.p className="mt-6" data-aos="fade-up" data-aos-delay="300">
-							My goal is to contribute to projects that require creative
-							solutions and to collaborate with talented teams. I’m always eager
-							to grow and take on new challenges, and I’m open to exciting job
-							opportunities that align with my skills and passion for web
-							development.
+						<motion.p
+							className="mt-4 sm:mt-6 leading-relaxed"
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.3 }}
+							viewport={{ once: true }}>
+							My mission? To spark creativity in projects and team up with
+							brilliant minds. I’m hungry for growth, ready for challenges, and
+							on the hunt for{" "}
+							<span className="text-yellow-400">epic job opportunities</span> in
+							web development!
 						</motion.p>
 
-						<div className="mt-8 flex justify-center md:justify-start space-x-4">
+						<div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
 							<motion.a
 								href={jibonResume}
 								download
-								data-aos="fade-up"
-								data-aos-delay="400"
-								className="px-6 py-3 bg-yellow-500 text-white rounded-md shadow-md hover:bg-yellow-500 transition">
+								className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all font-semibold animate-pulse"
+								whileHover={{ scale: 1.1 }}
+								whileTap={{ scale: 0.95 }}
+								initial={{ opacity: 0, x: -20 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.6, delay: 0.4 }}
+								viewport={{ once: true }}>
 								Get Resume
 							</motion.a>
 
-							<Link
-								to="skills"
-								smooth={true}
-								duration={500}
-								data-aos="fade-up"
-								data-aos-delay="700"
-								className="px-6 py-2 border-2 border-yellow-500 cursor-pointer text-white rounded-md hover:bg-yellow-500  transition">
-								<motion.p>Skills</motion.p>
-							</Link>
+							<motion.span
+								whileHover={{ scale: 1.1 }}
+								whileTap={{ scale: 0.95 }}
+								initial={{ opacity: 0, x: 20 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.6, delay: 0.4 }}
+								viewport={{ once: true }}
+								className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-white hover:shadow-xl transition-all font-semibold">
+								<Link to="skills" smooth={true} duration={500}>
+									<motion.p whileHover={{ scale: 1.1 }}>Skills</motion.p>
+								</Link>
+							</motion.span>
 						</div>
-					</div>
-				</motion.div>
+					</motion.div>
 
-				{/* Right side: Image with smaller size */}
-				<motion.div
-					className="relative group w-full md:w-1/2 flex justify-center items-center"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 1, delay: 0.3 }}>
-					{/* Portfolio Image */}
-					<img
-						src={picture}
-						alt="Md Jillur Rahman"
-						className="w-[520px] rounded-lg transform scale-95 grayscale transition-all duration-1000 group-hover:scale-100 group-hover:grayscale-0"
-					/>
-				</motion.div>
+					{/* Right side: Image */}
+					<motion.div
+						className="w-full md:w-1/2 flex justify-center items-center relative"
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 1, delay: 0.3, type: "spring" }}
+						viewport={{ once: true }}>
+						<div className="relative p-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg shadow-lg">
+							<img
+								src={picture}
+								alt="Md Jillur Rahman"
+								className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[520px] rounded-lg transform grayscale transition-all duration-1000 hover:scale-105 hover:grayscale-0 hover:shadow-2xl"
+							/>
+						</div>
+					</motion.div>
+				</div>
 			</div>
 		</section>
 	);
