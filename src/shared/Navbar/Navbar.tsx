@@ -47,7 +47,7 @@ const Navbar = () => {
 				<motion.nav
 					className={`w-full fixed top-0 left-0 z-50 text-white transition-all ${
 						scrolling
-							? "bg-gradient-to-r from-[#293649] via-[#1a2634] to-[#3c526d] shadow-[0_0_15px_rgba(234,179,8,0.3)]"
+							? "bg-gradient-to-r from-[#293649] via-[#1a2634] to-[#3c526d]  shadow-[0_0_15px_rgba(234,179,8,0.3)]"
 							: "bg-transparent"
 					}`}
 					initial={{ y: -100, opacity: 0 }}
@@ -147,7 +147,9 @@ const Navbar = () => {
 										className="px-6 py-3 border-2 border-yellow-500 text-yellow-400 rounded-full hover:bg-yellow-600 hover:text-white hover:shadow-[0_0_15px_rgba(234,179,8,0.8)] transition animate-pulse-slow">
 										Resume
 									</button>
+									
 								</motion.div>
+								
 							</>
 						)}
 					</AnimatePresence>

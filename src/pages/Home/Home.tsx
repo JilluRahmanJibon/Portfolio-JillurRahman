@@ -1,6 +1,7 @@
 import About from "./About";
 import Contact from "./Contact";
 import Hero from "./Hero";
+// import Marketplace from "./Marketplace";
 import Portfolio from "./Portfolio";
 import Skills from "./Skills";
 
@@ -10,6 +11,7 @@ const Home = () => {
         <About />
         <Skills />
         <Portfolio />
+        {/* <Marketplace/> */}
         <Contact/>
     </div>;
 };

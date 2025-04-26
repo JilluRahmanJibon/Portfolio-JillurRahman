@@ -43,13 +43,10 @@ const About = () => {
 							viewport={{ once: true }}>
 							Hello! I'm{" "}
 							<span className="text-yellow-400 font-bold">Jillur Rahman</span>,
-							a passionate Jr. Full Stack Developer. I specialize in crafting
-							web applications with modern tools like{" "}
-							<span className="text-yellow-400">
-								JavaScript, TypeScript, Redux, and Next.js
-							</span>
-							. My frontend skills shine with HTML5, CSS3, React.js, Bootstrap,
-							and Tailwind CSS.
+							a professional{" "}
+							<span className="text-yellow-400">Full Stack Developer</span> with
+							<span className="text-yellow-400"> 3+ years</span> of experience
+							in crafting high-quality, scalable web applications. 🚀
 						</motion.p>
 
 						<motion.p
@@ -58,13 +55,16 @@ const About = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2 }}
 							viewport={{ once: true }}>
-							On the backend, I wield{" "}
+							I specialize in modern web technologies like
 							<span className="text-yellow-400">
-								Express.js, MySQL, and MongoDB
+								{" "}
+								React.js, Next.js, Node.js, Express.js, TypeScript, Redux,
+								MongoDB, MySQL,
 							</span>{" "}
-							to build robust RESTful APIs. I thrive on solving complex problems
-							and learning cutting-edge tech to create scalable, efficient
-							solutions.
+							and
+							<span className="text-yellow-400"> WordPress. </span>
+							My goal is to understand your unique requirements and deliver
+							smart, reliable solutions tailored to your vision.
 						</motion.p>
 
 						<motion.p
@@ -73,11 +73,27 @@ const About = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.3 }}
 							viewport={{ once: true }}>
+							Whether it's building from scratch, fixing bugs, optimizing
+							performance, or developing custom WordPress sites - {" "}
+							<span className="text-yellow-400">I've got you covered.</span> I
+							thrive on solving complex problems and learning cutting-edge tech
+							to create scalable, efficient solutions.
+						</motion.p>
+
+						<motion.p
+							className="mt-4 sm:mt-6 leading-relaxed"
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, delay: 0.4 }}
+							viewport={{ once: true }}>
 							My mission? To spark creativity in projects and team up with
 							brilliant minds. I’m hungry for growth, ready for challenges, and
-							on the hunt for{" "}
-							<span className="text-yellow-400">epic job opportunities</span> in
-							web development!
+							on the hunt for
+							<span className="text-yellow-400">
+								{" "}
+								epic job opportunities
+							</span>{" "}
+							in web development!
 						</motion.p>
 
 						<div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
@@ -101,7 +117,7 @@ const About = () => {
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.4 }}
 								viewport={{ once: true }}
-								className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-white hover:shadow-xl transition-all font-semibold">
+								className="px-6 py-3 border-2 cursor-pointer border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-white hover:shadow-xl transition-all font-semibold">
 								<Link to="skills" smooth={true} duration={500}>
 									<motion.p whileHover={{ scale: 1.1 }}>Skills</motion.p>
 								</Link>

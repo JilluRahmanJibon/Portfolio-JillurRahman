@@ -6,17 +6,23 @@ import {
 	FaEnvelope,
 	FaWhatsapp,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaSquareUpwork } from "react-icons/fa6";
 import { Link } from "react-scroll";
 import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
 const Hero = () => {
 	const socialIcons = [
 		{
+			href: "https://www.upwork.com/freelancers/webdeveloperjillur?mp_source=share",
+			icon: <FaSquareUpwork />,
+			delay: 400,
+		},
+		{
 			href: "https://github.com/JilluRahmanJibon",
 			icon: <FaGithub />,
 			delay: 500,
 		},
+
 		{ href: "https://wa.me/+8801910924868", icon: <FaWhatsapp />, delay: 600 },
 		{
 			href: "https://www.linkedin.com/in/jillurahmanjibon",
@@ -89,7 +95,7 @@ const Hero = () => {
 							transition={{ duration: 0.6, delay: 0.6 }}>
 							Get Resume
 						</motion.a>
-						<motion.span
+						<motion.p
 							initial={{ opacity: 0, x: 20 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.6, delay: 0.7 }}
@@ -98,11 +104,11 @@ const Hero = () => {
 								boxShadow: "0 0 15px rgba(234, 179, 8, 0.7)",
 							}}
 							whileTap={{ scale: 0.95 }}
-							className="px-8 py-3 border-2 border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-white hover:shadow-xl transition-all font-semibold">
+							className="px-8 cursor-pointer py-3 border-2 border-yellow-400 text-yellow-400 rounded-full hover:bg-yellow-400 hover:text-white hover:shadow-xl transition-all font-semibold">
 							<Link to="about" smooth={true} duration={500}>
-								<motion.p whileHover={{ scale: 1.1 }}>About Me</motion.p>
+								<motion.span whileHover={{ scale: 1.1 }}>About Me</motion.span>
 							</Link>
-						</motion.span>
+						</motion.p>
 					</div>
 				</div>
 
@@ -114,7 +120,7 @@ const Hero = () => {
 						transition={{ duration: 0.8, delay: 0.4 }}>
 						Follow Me
 					</motion.p>
-					<div className="flex z-50 flex-row sm:flex-col justify-center space-x-3 sm:space-x-0 sm:space-y-6 order-2 sm:order-1">
+					<div className="flex z-20 flex-row sm:flex-col justify-center space-x-3 sm:space-x-0 sm:space-y-6 order-2 sm:order-1">
 						{socialIcons.map((item, index) => (
 							<motion.a
 								key={index}

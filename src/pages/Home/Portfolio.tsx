@@ -3,7 +3,9 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import arltl from "../../../src/assets/images/arltl.png";
 import idiaDesigns from "../../../src/assets/images/idia-designs.png";
+import jobwhee from "../../../src/assets/images/jobwhee.png";
 import gamingPortfolio from "../../../src/assets/images/gaming-portfolio.png";
+import sunnahTech from "../../../src/assets/images/sunnah-tech.png";
 import weg from "../../../src/assets/images/weg.png";
 import snapAcademy from "../../../src/assets/images/snap-academy.png";
 
@@ -23,6 +25,20 @@ const portfolios: Record<string, PortfolioItem[]> = {
 			description: "A CRUD app to manage contacts in one place.",
 			demo: "https://arltl.com",
 			source: "https://arltl.com",
+		},
+		{
+			name: "Software Agency",
+			image: sunnahTech,
+			description: "Sunnah Technology is an  Software agency website.",
+			demo: "https://sunnahtechnology.com",
+			source: "https://sunnahtechnology.com",
+		},
+		{
+			name: "Jobwhee Marketplace",
+			image: jobwhee,
+			description: "Jobwhee is an international marketplace.",
+			demo: "https://jobwhee.vercel.app/",
+			source: "https://github.com/JilluRahmanJibon/Jobwhee-Landing-Page",
 		},
 		{
 			name: "Gaming Portfolio",
@@ -63,8 +79,10 @@ const Portfolio = () => {
 	const [activeCard, setActiveCard] = useState<number | null>(null);
 
 	const handleCardClick = (index: number) => {
-		// Toggle the active card on mobile; set to null if already active
-		setActiveCard(activeCard === index ? null : index);
+		// Toggle active card only on mobile (below sm: 640px)
+		if (window.innerWidth < 640) {
+			setActiveCard(activeCard === index ? null : index);
+		}
 	};
 
 	return (
@@ -130,23 +148,16 @@ const Portfolio = () => {
 							<img
 								src={portfolio.image}
 								alt={portfolio.name}
-								className={`w-full h-60 object-cover transition-all duration-500 ${
-									activeCard === index
-										? "opacity-70 scale-105"
-										: "group-hover:opacity-70 group-hover:scale-105"
-								}`}
+								className="w-full h-60 object-cover transition-all duration-500 group-hover:opacity-70 group-hover:scale-105"
 							/>
 
 							{/* Overlay with Info */}
-							<motion.div
-								className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-5 transition-all duration-500 ${
-									activeCard === index
+							<div
+								className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-5 transition-all duration-300 ${
+									window.innerWidth < 640 && activeCard === index
 										? "opacity-100"
-										: "opacity-0 group-hover:opacity-100 sm:opacity-0"
-								}`}
-								initial={{ opacity: 0 }}
-								animate={{ opacity: activeCard === index ? 1 : 0 }}
-								transition={{ duration: 0.3 }}>
+										: "opacity-0 group-hover:opacity-100"
+								}`}>
 								<h3 className="text-xl sm:text-2xl font-bold text-yellow-400 mb-2 drop-shadow-md">
 									{portfolio.name}
 								</h3>
@@ -160,8 +171,7 @@ const Portfolio = () => {
 											target="_blank"
 											rel="noopener noreferrer"
 											className="text-gray-300 hover:text-yellow-400 text-xl sm:text-2xl transition-all"
-											onClick={e => e.stopPropagation()} // Prevents card toggle when clicking link
-										>
+											onClick={e => e.stopPropagation()}>
 											<FaGithub />
 										</a>
 									)}
@@ -171,13 +181,12 @@ const Portfolio = () => {
 											target="_blank"
 											rel="noopener noreferrer"
 											className="text-yellow-400 hover:text-yellow-500 text-xl sm:text-2xl transition-all"
-											onClick={e => e.stopPropagation()} // Prevents card toggle when clicking link
-										>
+											onClick={e => e.stopPropagation()}>
 											<FaExternalLinkAlt />
 										</a>
 									)}
 								</div>
-							</motion.div>
+							</div>
 						</motion.div>
 					))}
 				</div>
