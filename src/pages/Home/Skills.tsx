@@ -5,34 +5,45 @@ import { motion } from "framer-motion";
 const Skills = () => {
 	const skills = {
 		Web: [
-			{ name: "JavaScript", percent: 85 },
+			{ name: "JavaScript (ES6+)", percent: 85 },
 			{ name: "TypeScript", percent: 70 },
 			{ name: "React JS", percent: 95 },
 			{ name: "Next JS", percent: 70 },
-			{ name: "Redux", percent: 75 },
+			{ name: "Redux / Redux Toolkit", percent: 75 },
 			{ name: "Node JS", percent: 87 },
 			{ name: "Express JS", percent: 92 },
 			{ name: "MongoDB", percent: 97 },
 			{ name: "MySQL", percent: 80 },
+			{ name: "PostgreSQL", percent: 75 },
 			{ name: "Firebase", percent: 87 },
 			{ name: "JWT", percent: 94 },
+			{ name: "Socket.IO", percent: 80 },
+			{ name: "webRTC", percent: 50 },
 		],
-		"CSS Framework": [
+		"CSS Frameworks & Animations": [
 			{ name: "Tailwind CSS", percent: 97 },
 			{ name: "Bootstrap", percent: 95 },
 			{ name: "Foundation", percent: 80 },
 			{ name: "Ant Design", percent: 85 },
 			{ name: "Material UI", percent: 80 },
-			{ name: "AOS", percent: 90 },
+			{ name: "AOS (Animation On Scroll)", percent: 90 },
 			{ name: "Framer Motion", percent: 83 },
 			{ name: "Swiper", percent: 80 },
 		],
 		Tools: [
-			{ name: "Git", percent: 96 },
-			{ name: "PhotoShop", percent: 75 },
+			{ name: "Git / GitHub", percent: 96 },
 			{ name: "Figma", percent: 90 },
+			{ name: "Photoshop", percent: 75 },
 			{ name: "Vercel", percent: 95 },
 			{ name: "Netlify", percent: 85 },
+			{ name: "Jira", percent: 85 },
+			{ name: "Trello", percent: 80 },
+		],
+		"Other Skills": [
+			{ name: "WordPress (Custom Development)", percent: 85 },
+			{ name: "Figma to HTML/CSS/React/Next.js", percent: 95 },
+			{ name: "Stripe Payment Integration", percent: 90 },
+			{ name: "RESTful API Development", percent: 92 },
 		],
 	};
 
@@ -46,7 +57,6 @@ const Skills = () => {
 		<section
 			id="skills"
 			className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-800 to-gray-900 relative overflow-hidden">
-			{/* Animated Background Glow */}
 			<motion.div
 				className="absolute inset-0 bg-yellow-500 opacity-10 rounded-full blur-3xl"
 				initial={{ scale: 0, x: "-50%", y: "-50%" }}
@@ -66,7 +76,7 @@ const Skills = () => {
 				</motion.h2>
 
 				{/* Skill Category Navigation */}
-				<ul className="grid grid-cols-2 sm:flex sm:justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+				<ul className="grid grid-cols-2 sm:flex sm:justify-center text-center gap-3 sm:gap-4 mb-8 sm:mb-12">
 					{skillsName.map(name => (
 						<motion.li
 							whileTap={{ scale: 0.95 }}
@@ -75,7 +85,7 @@ const Skills = () => {
 								boxShadow: "0 0 15px rgba(234, 179, 8, 0.7)",
 							}}
 							onClick={() => setSelectedSkill(name)}
-							className={`cursor-pointer px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base font-semibold ${
+							className={`cursor-pointer flex items-center justify-center text-center px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base font-semibold ${
 								name === selectedSkill
 									? "bg-gradient-to-r from-yellow-500 to-yellow-600 text-white shadow-lg"
 									: "bg-gray-700 border-2 border-yellow-400 text-yellow-400 hover:bg-gray-600"
