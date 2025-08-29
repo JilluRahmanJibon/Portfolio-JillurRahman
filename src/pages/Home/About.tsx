@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import picture from "../../assets/images/Jillurahman.png";
+import picture from "../../assets/images/JIllur1.webp";
 import { Link } from "react-scroll";
 import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
@@ -41,12 +41,13 @@ const About = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.1 }}
 							viewport={{ once: true }}>
-							Hello! I'm{" "}
+							👋 Hi, I’m{" "}
 							<span className="text-yellow-400 font-bold">Jillur Rahman</span>,
-							a professional{" "}
-							<span className="text-yellow-400">Full Stack Developer</span> with
-							<span className="text-yellow-400"> 3+ years</span> of experience
-							in crafting high-quality, scalable web applications. 🚀
+							a <span className="text-yellow-400">Full Stack Developer</span>{" "}
+							working in web development
+							<span className="text-yellow-400"> since 2021</span>. I build
+							modern, fast & scalable web applications that help businesses grow
+							🚀
 						</motion.p>
 
 						<motion.p
@@ -55,16 +56,11 @@ const About = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2 }}
 							viewport={{ once: true }}>
-							I specialize in modern web technologies like
-							<span className="text-yellow-400">
-								{" "}
-								React.js, Next.js, Node.js, Express.js, TypeScript, Redux,
-								MongoDB, MySQL,
-							</span>{" "}
-							and
-							<span className="text-yellow-400"> WordPress. </span>
-							My goal is to understand your unique requirements and deliver
-							smart, reliable solutions tailored to your vision.
+							I’ve successfully delivered{" "}
+							<span className="text-yellow-400">30+ projects</span>
+							with excellent feedback — from startups to enterprises. My work
+							ensures responsive, SEO-friendly, and high-performing solutions
+							tailored to your vision.
 						</motion.p>
 
 						<motion.p
@@ -73,11 +69,16 @@ const About = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.3 }}
 							viewport={{ once: true }}>
-							Whether it's building from scratch, fixing bugs, optimizing
-							performance, or developing custom WordPress sites -{" "}
-							<span className="text-yellow-400">I've got you covered.</span> I
-							thrive on solving complex problems and learning cutting-edge tech
-							to create scalable, efficient solutions.
+							Expertise:{" "}
+							<span className="text-yellow-400">
+								React, Next.js, TypeScript, Tailwind, Node.js, Express.js,
+								MongoDB, MySQL
+							</span>
+							. I also integrate{" "}
+							<span className="text-yellow-400">
+								Stripe, REST APIs, Socket.IO
+							</span>{" "}
+							and more — from front-end to backend to deployment.
 						</motion.p>
 
 						<motion.p
@@ -86,14 +87,10 @@ const About = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.4 }}
 							viewport={{ once: true }}>
-							My mission? To spark creativity in projects and team up with
-							brilliant minds. I’m hungry for growth, ready for challenges, and
-							on the hunt for
-							<span className="text-yellow-400">
-								{" "}
-								epic job opportunities
-							</span>{" "}
-							in web development!
+							My process: Requirement analysis → Development → API integration →
+							Testing → Deployment → Long-term support. I believe in clean code,
+							strong communication and building digital products that truly make
+							an impact.
 						</motion.p>
 
 						<div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
