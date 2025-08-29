@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import picture from "../../assets/images/jibon.jpg";
+import picture from "../../assets/images/Jillurahman.png";
 import { Link } from "react-scroll";
 import jibonResume from "../../assets/Jillu Rahman Jibon.pdf";
 
@@ -74,7 +74,7 @@ const About = () => {
 							transition={{ duration: 0.8, delay: 0.3 }}
 							viewport={{ once: true }}>
 							Whether it's building from scratch, fixing bugs, optimizing
-							performance, or developing custom WordPress sites - {" "}
+							performance, or developing custom WordPress sites -{" "}
 							<span className="text-yellow-400">I've got you covered.</span> I
 							thrive on solving complex problems and learning cutting-edge tech
 							to create scalable, efficient solutions.

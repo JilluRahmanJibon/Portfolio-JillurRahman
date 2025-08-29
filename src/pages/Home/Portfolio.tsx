@@ -9,6 +9,8 @@ import sunnahTech from "../../../src/assets/images/sunnah-tech.png";
 import weg from "../../../src/assets/images/weg.png";
 import snapAcademy from "../../../src/assets/images/snap-academy.png";
 import musicExclusive from "../../../src/assets/images/music-exclusive.png";
+import zero2Codes from "../../../src/assets/images/zero2codes.png";
+import brp from "../../../src/assets/images/brp.png";
 
 type PortfolioItem = {
 	name: string;
@@ -21,11 +23,27 @@ type PortfolioItem = {
 const portfolios: Record<string, PortfolioItem[]> = {
 	Web: [
 		{
+			name: "Zero2Codes",
+			image: zero2Codes,
+			description:
+				"I have built an Udemy-like platform (Zero2Codes) with Student, Mentor, Admin & Super Admin roles. I can deliver a scalable, responsive eLearning site tailored to your needs.",
+			demo: "https://zero2codes.vercel.app",
+			source: "https://github.com/JilluRahmanJibon",
+		},
+		{
 			name: "Jobwhee Marketplace",
 			image: jobwhee,
 			description:
 				"Jobwhee is a global full-stack platform for international job listings, connecting employers and talented professionals worldwide through a modern, scalable, and user-friendly web application.",
 			demo: "https://jobwhee.com/",
+			source: "https://github.com/JilluRahmanJibon",
+		},
+		{
+			name: "BRP",
+			image: brp,
+			description:
+				"As a Front-end developer for 'Bangladesh Reformist Party' website.",
+			demo: "https://brpbd.org/",
 			source: "https://github.com/JilluRahmanJibon",
 		},
 		{
@@ -86,26 +104,32 @@ const portfolios: Record<string, PortfolioItem[]> = {
 		},
 	],
 };
-
 const Portfolio = () => {
 	const categories = Object.keys(portfolios);
 	const [selectedCategory, setSelectedCategory] = useState<string>(
 		categories[0]
 	);
 	const [activeCard, setActiveCard] = useState<number | null>(null);
+	const [visibleCount, setVisibleCount] = useState(6);
 
 	const handleCardClick = (index: number) => {
-		// Toggle active card only on mobile (below sm: 640px)
 		if (window.innerWidth < 640) {
 			setActiveCard(activeCard === index ? null : index);
 		}
 	};
 
+	const handleLoadMore = () => {
+		setVisibleCount(prev => prev + 6);
+	};
+
+	const currentPortfolios = portfolios[selectedCategory] || [];
+	const visibleProjects = currentPortfolios.slice(0, visibleCount);
+
 	return (
 		<section
 			id="portfolio"
 			className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-gray-800 relative overflow-hidden">
-			{/* Animated Background Glow */}
+			{/* Background Glow */}
 			<motion.div
 				className="absolute inset-0 bg-yellow-500 opacity-10 rounded-full blur-3xl"
 				initial={{ scale: 0, x: "-50%", y: "-50%" }}
@@ -129,7 +153,10 @@ const Portfolio = () => {
 					{categories.map(category => (
 						<motion.button
 							key={category}
-							onClick={() => setSelectedCategory(category)}
+							onClick={() => {
+								setSelectedCategory(category);
+								setVisibleCount(4); // reset when category changes
+							}}
 							whileHover={{
 								scale: 1.1,
 								boxShadow: "0 0 15px rgba(234, 179, 8, 0.7)",
@@ -147,7 +174,7 @@ const Portfolio = () => {
 
 				{/* Portfolio Grid */}
 				<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-					{portfolios[selectedCategory]?.map((portfolio, index) => (
+					{visibleProjects.map((portfolio, index) => (
 						<motion.div
 							key={index}
 							initial={{ opacity: 0, y: 30 }}
@@ -167,7 +194,7 @@ const Portfolio = () => {
 								className="w-full h-60 object-cover transition-all duration-500 group-hover:opacity-70 group-hover:scale-105"
 							/>
 
-							{/* Overlay with Info */}
+							{/* Overlay */}
 							<div
 								className={`absolute inset-0 h-full bg-black/70 to-transparent flex flex-col justify-end p-5 transition-all duration-300 ${
 									typeof window !== "undefined" &&
@@ -179,7 +206,7 @@ const Portfolio = () => {
 								<h3 className="text-xl sm:text-2xl font-bold text-yellow-400 mb-2 drop-shadow-md">
 									{portfolio.name}
 								</h3>
-								<p className="text-sm sm:text-base text-gray-200 ">
+								<p className="text-sm sm:text-base text-gray-200">
 									{portfolio.description}
 								</p>
 								<div className="flex gap-4 mt-4">
@@ -208,6 +235,29 @@ const Portfolio = () => {
 						</motion.div>
 					))}
 				</div>
+				{/* Full Project List Button */}
+				<div className="mt-6">
+					<a
+						href="https://docs.google.com/document/d/1C9kJwDLlbS_9sWkMKVQhAqCvl59Gq1qJfKnKVJBQkbo/edit?usp=sharing"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="inline-block px-6 py-3 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-yellow-500 hover:text-white font-semibold shadow-lg transition-all">
+						📂 View All Projects List
+					</a>
+				</div>
+
+				{/* Load More Button */}
+				{visibleCount < currentPortfolios.length && (
+					<div className="mt-10">
+						<motion.button
+							onClick={handleLoadMore}
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className="px-6 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold shadow-lg hover:shadow-yellow-500/50 transition-all">
+							Load More
+						</motion.button>
+					</div>
+				)}
 			</div>
 		</section>
 	);

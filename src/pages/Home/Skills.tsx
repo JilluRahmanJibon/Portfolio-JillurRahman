@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 const Skills = () => {
 	const skills = {
 		Web: [
+			{ name: "HTML5", percent: 98 },
+			{ name: "CSS3", percent: 89 },
 			{ name: "JavaScript (ES6+)", percent: 85 },
 			{ name: "TypeScript", percent: 70 },
 			{ name: "React JS", percent: 95 },

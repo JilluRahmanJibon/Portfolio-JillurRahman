@@ -66,7 +66,7 @@ const Contact = () => {
 			icon: <FaGithub />,
 			delay: 0.5,
 		},
-		{ href: "https://wa.me/+8801910924868", icon: <FaWhatsapp />, delay: 0.6 },
+		{ href: "https://wa.me/+8801853239027", icon: <FaWhatsapp />, delay: 0.6 },
 		{
 			href: "https://www.linkedin.com/in/jillurahmanjibon",
 			icon: <FaLinkedin />,
@@ -183,11 +183,11 @@ const Contact = () => {
 									<FiPhone className="text-xl sm:text-2xl" />
 								</div>
 								<div>
-									<p className="text-gray-300 font-medium">Phone</p>
+									<p className="text-gray-300 font-medium">Phone (WhatsApp)</p>
 									<a
-										href="tel:+8801910924868"
+										href="tel:+8801853239027"
 										className="text-base sm:text-lg font-semibold text-yellow-400 hover:text-yellow-500 transition-colors">
-										+88 01910-924868
+										+88 01853-239027
 									</a>
 								</div>
 							</div>
